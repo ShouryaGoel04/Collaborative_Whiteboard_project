@@ -1,133 +1,37 @@
-#  Collaborative Whiteboard
+# Collaborative Whiteboard
 
-A real-time collaborative whiteboard application that allows multiple users to draw, create shapes, and collaborate on a shared canvas in real-time. Built with **React**, **Socket.IO**, and **Fabric.js** for seamless multi-user drawing experiences.
+A robust real-time collaborative whiteboard that empowers multiple users to draw, create shapes, and brainstorm together on a shared canvas. Built with **React**, **Socket.IO**, and **Fabric.js**, this app delivers a seamless multi-user drawing experience.
 
-**Video Demonstration Link:** https://drive.google.com/file/d/13iBleH3I83pfNF9IT-3UXiHjxwbDF-vw/view?usp=sharing
-
-**Click on the link to run the Deployed WebApp:** https://collaborative-whiteboard-murex.vercel.app/
-
-
+- **[Video Demo](https://drive.google.com/file/d/13iBleH3I83pfNF9IT-3UXiHjxwbDF-vw/view?usp=sharing)**
+- **[Live App](https://collaborative-whiteboard-murex.vercel.app/)**
 
 ---
 
-##  Project Description
+## Overview
 
-The Collaborative Whiteboard is a web-based platform designed for teams to work together on a shared digital canvas.
-
-Users can:
-- Create or join rooms
-- Draw using multiple tools
-- Add shapes and text
-- See changes from other users in real-time
-
-It features **user permission management**, allowing room owners to control who can edit or view the canvas.
+Collaborative Whiteboard is a web platform for visual teamwork and creative collaboration. Users can create or join rooms, draw, add shapes and text, and see real-time updates from others. Room owners manage permissions, ensuring secure and controlled collaboration.
 
 ---
 
-##  Key Features
+## Features
 
-###  User Management
-- Custom usernames and registration
-- Create rooms with public/private settings
-- Password-protected rooms
-- Permission-based access control (edit/view-only)
-- Real-time user presence indicators
-
-###  Drawing Tools
-- Freehand pen tool (custom color & stroke width)
-- Eraser
-- Rectangle and circle tools
-- Editable text elements
-- Selection and object manipulation
-
-###  Collaboration Features
-- Real-time canvas sync across all users
-- Live path drawing & object updates
-- Synchronized canvas clearing
-- User join/leave notifications
-
-###  Export & Save Options
-- Export as PNG and JPEG images
-- Export as PDF with metadata
-- Export/import canvas data as JSON
-
-###  Room Management
-- Public & private room creation
-- Password protection
-- Room owner controls (edit/view permissions)
-- Default permissions for new users
+- **User & Room Management:** Custom usernames, registration, public/private rooms, password protection, permission controls (edit/view), and real-time presence indicators.
+- **Drawing Tools:** Freehand pen with custom color/stroke, eraser, rectangles, circles, editable text, and object manipulation.
+- **Real-Time Collaboration:** Live canvas sync, instant drawing/object updates, synchronized clearing, and user join/leave notifications.
+- **Export & Save:** Export as PNG, JPEG, or PDF (with metadata); import/export canvas as JSON.
+- **Room Controls:** Create/manage rooms, set passwords, assign permissions, and set default access for new users.
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
-###  Frontend
-- **React** (with Hooks)
-- **Fabric.js** – Canvas manipulation
-- **Socket.IO Client** – Real-time communication
-- **CSS3** – Responsive styling
-- **Vite** – Fast build & dev server
-
-###  Backend
-- **Node.js**
-- **Express.js**
-- **Socket.IO**
-- **CORS**
+- **Frontend:** React (Hooks), Fabric.js, Socket.IO Client, CSS3, Vite
+- **Backend:** Node.js, Express.js, Socket.IO, CORS
 
 ---
 
+## Local Development Setup
 
+**Prerequisites:** Node.js (v14+), npm/yarn, modern browser
 
-##  Setup Instructions (Local Development)
-
-###  Prerequisites
-- Node.js (v14+)
-- npm or yarn
-- Modern browser (with WebSocket support)
-
----
-
-###  Backend Setup
-
-bash
-
-```cd whiteboard-backend``` <br>
-```npm install``` <br>
-```npm install express socket.io cors``` <br>
-```node index.js```
-
-Runs on: http://localhost:10000
-
-bash
-
-```cd whiteboard-frontend``` <br>
-```npm install``` <br>
-```npm install react react-dom socket.io-client``` <br>
-```npm install -D vite @vitejs/plugin-react``` <br>
-```npm run dev```
-
-Update Socket.IO connection URL in WhiteboardApp.jsx if necessary:
-
-```const socket = io('http://localhost:10000', {``` <br>
-  ```transports: ['websocket'],``` <br>
- ``` withCredentials: true``` <br>
-```});```
-
-# Running the Full Application
-
-If the setup is complete you just need to run the commands given below.
-
-## Terminal 1: Backend
-bash
-
-```cd whiteboard-backend``` <br>
-```node index.js```
-
-## Terminal 2: Frontend
-bash
-
-```cd whiteboard-frontend``` <br>
-```npm run dev```
-
-Open your browser at: http://localhost:5173
-
+**Backend:**
