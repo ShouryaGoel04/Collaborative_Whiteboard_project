@@ -4,78 +4,92 @@
   flex-direction: row;
   height: 100vh;
   font-family: 'Segoe UI', 'Arial', sans-serif;
-  background: #f5f7fa;
+  background: #f6fafb;
 }
 
 /* ----------- TOOLBAR: RIGHT-SIDE VERTICAL SIDEBAR ----------- */
 .toolbar {
   flex-shrink: 0;
-  width: 90px;
-  min-width: 70px;
-  max-width: 110px;
+  width: 104px;
+  min-width: 80px;
+  max-width: 140px;
   height: 100vh;
-  background: linear-gradient(135deg, #51d0de 0%, #bf4aa8 100%);
+  background: linear-gradient(135deg, #1e90a8 0%, #7bd389 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 32px 10px;
-  box-shadow: -2px 0 12px rgba(80, 80, 120, 0.06);
+  gap: 28px;
+  padding: 36px 10px 36px 10px;
+  box-shadow: -3px 0 18px rgba(30, 144, 168, 0.09);
   z-index: 10;
-  border-left: 3px solid #fff;
+  border-left: 3px solid #f6fafb;
   position: relative;
 }
 
-/* Toolbar buttons stacked vertically */
+/* Toolbar buttons: grouped for better visual order */
+.toolbar .toolbar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+}
+
+/* Toolbar buttons: fit text, never overflow */
 .toolbar button,
 .toolbar label {
-  width: 48px;
-  height: 48px;
-  margin: 0;
-  padding: 0;
+  width: auto;
+  min-width: 70px;
+  max-width: 100%;
+  padding: 11px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   background: #fff;
   cursor: pointer;
-  border-radius: 12px;
-  transition: box-shadow 0.2s, background 0.2s, color 0.2s, transform 0.18s;
-  font-size: 20px;
-  color: #bf4aa8;
-  box-shadow: 0 2px 8px rgba(81, 208, 222, 0.12);
+  border-radius: 14px;
+  transition: box-shadow 0.25s, background 0.25s, color 0.25s, transform 0.17s;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e90a8;
+  box-shadow: 0 2px 8px rgba(30, 144, 168, 0.13);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .toolbar button:hover:not(:disabled),
 .toolbar label:hover {
-  background: #51d0de;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(81, 208, 222, 0.22);
-  transform: scale(1.07);
+  background: #ffe066;
+  color: #1a5e63;
+  box-shadow: 0 5px 16px rgba(255, 224, 102, 0.25);
+  transform: scale(1.06);
 }
 
 .toolbar button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   background: #e0e0e0;
-  color: #aaa;
+  color: #8e9aaf;
   box-shadow: none;
 }
 
 .toolbar button.active {
-  background: #bf4aa8;
+  background: #1e90a8;
   color: #fff;
-  box-shadow: 0 2px 12px rgba(191, 74, 168, 0.22);
+  box-shadow: 0 4px 14px rgba(30, 144, 168, 0.21);
 }
 
 .undo-redo-btn {
-  background: #d9d9d9 !important;
-  color: #51d0de !important;
+  background: #7bd389 !important;
+  color: #1a5e63 !important;
   font-weight: 700;
 }
 .undo-redo-btn:hover:not(:disabled) {
-  background: #51d0de !important;
-  color: #fff !important;
+  background: #ffe066 !important;
+  color: #1a5e63 !important;
 }
 
 .toolbar input[type="color"] {
@@ -84,24 +98,24 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(81, 208, 222, 0.22);
+  box-shadow: 0 2px 6px rgba(30, 144, 168, 0.13);
   margin: 0;
   background: #fff;
 }
 
 .toolbar input[type="range"] {
-  width: 70px;
+  width: 80px;
   margin: 0;
   transform: rotate(90deg);
-  accent-color: #bf4aa8;
+  accent-color: #1e90a8;
 }
 
 /* Visual separator for vertical toolbar */
 .separator {
-  width: 70%;
-  height: 2px;
-  background-color: #d9d9d9;
-  margin: 12px 0;
+  width: 74%;
+  height: 3px;
+  background-color: #e9ecef;
+  margin: 18px 0;
   border-radius: 2px;
 }
 
@@ -118,23 +132,29 @@
     max-width: none;
     padding: 10px 8px;
     border-left: none;
-    border-top: 3px solid #fff;
-    box-shadow: 0 -2px 12px rgba(80, 80, 120, 0.06);
+    border-top: 3px solid #f6fafb;
+    box-shadow: 0 -3px 15px rgba(30, 144, 168, 0.09);
     position: static;
     z-index: 10;
+    gap: 12px;
+  }
+  .toolbar .toolbar-group {
+    flex-direction: row;
     gap: 10px;
+    width: auto;
   }
   .toolbar button, .toolbar label {
-    width: 40px;
+    min-width: 60px;
     height: 40px;
-    font-size: 17px;
+    font-size: 14px;
+    padding: 8px 12px;
   }
   .toolbar input[type="range"] {
     width: 60px;
     transform: none;
   }
   .separator {
-    width: 2px;
+    width: 3px;
     height: 70%;
     margin: 0 8px;
   }
@@ -158,80 +178,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #d9d9d9;
+  background: #e6f9f5;
   z-index: 3000;
 }
 
 .registration-form, .room-selection .registration-form {
   background: #fff;
-  padding: 2.2rem 2rem;
-  border-radius: 14px;
-  box-shadow: 0 8px 32px rgba(81, 208, 222, 0.18);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(30, 144, 168, 0.13);
   text-align: center;
-  max-width: 400px;
-  width: 92%;
+  max-width: 420px;
+  width: 90%;
 }
 
 .registration-form h2 {
-  margin-bottom: 1rem;
-  color: #51d0de;
+  margin-bottom: 1.2rem;
+  color: #1e90a8;
   font-weight: 700;
+  font-size: 1.8rem;
 }
 
 .registration-form input {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1.5px solid #bf4aa8;
-  border-radius: 6px;
+  padding: 14px;
+  margin: 12px 0;
+  border: 2px solid #7bd389;
+  border-radius: 10px;
   font-size: 16px;
   box-sizing: border-box;
-  background: #f5f7fa;
+  background: #e6f9f5;
 }
 
 .registration-form button {
   width: 100%;
-  padding: 12px;
-  background: linear-gradient(90deg, #51d0de 60%, #bf4aa8 100%);
+  padding: 14px;
+  background: linear-gradient(90deg, #1e90a8 60%, #7bd389 100%);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 14px;
   font-size: 16px;
   cursor: pointer;
-  font-weight: 600;
-  margin-top: 10px;
-  transition: background 0.18s;
+  font-weight: 700;
+  margin-top: 14px;
+  transition: background 0.22s;
 }
 .registration-form button:hover {
-  background: linear-gradient(90deg, #bf4aa8 0%, #51d0de 100%);
+  background: linear-gradient(90deg, #ffe066 0%, #1e90a8 100%);
+  color: #1a5e63;
 }
 
 .room-header {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #bf4aa8;
+  margin-bottom: 2.5rem;
+  color: #1e90a8;
   font-weight: 700;
+  font-size: 1.6rem;
 }
 
 .room-actions {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
   justify-content: center;
 }
 .room-actions button {
-  padding: 12px 24px;
-  background: #51d0de;
+  padding: 14px 28px;
+  background: #1e90a8;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 14px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
-  transition: background 0.18s;
+  font-weight: 700;
+  transition: background 0.22s;
 }
 .room-actions button:hover {
-  background: #bf4aa8;
+  background: #ffe066;
+  color: #1a5e63;
 }
 
 /* ----------- ROOM INFO HEADER ----------- */
@@ -239,68 +263,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 20px;
-  background: linear-gradient(90deg, #51d0de 0%, #bf4aa8 100%);
+  padding: 18px 24px;
+  background: linear-gradient(90deg, #1e90a8 0%, #7bd389 100%);
   color: #fff;
   position: relative;
-  box-shadow: 0 2px 10px rgba(81, 208, 222, 0.09);
+  box-shadow: 0 3px 12px rgba(30, 144, 168, 0.13);
 }
 
 .room-title {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 26px;
+  font-weight: 900;
   color: #fff;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 
 .room-details {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
   position: absolute;
-  left: 20px;
+  left: 24px;
 }
 
 .room-details strong {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 .owner-badge {
-  background: #51d0de;
-  color: #fff;
-  padding: 4px 12px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 500;
+  background: #ffe066;
+  color: #1a5e63;
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .room-controls {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   position: absolute;
-  right: 20px;
+  right: 24px;
 }
 
 .room-controls button {
-  padding: 8px 16px;
-  background: rgba(255,255,255,0.18);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.22);
+  color: #1a5e63;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.2s;
-  backdrop-filter: blur(8px);
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.22s;
+  backdrop-filter: blur(10px);
 }
 .room-controls button:hover {
-  background: #bf4aa8;
-  color: #fff;
+  background: #ffe066;
+  color: #1a5e63;
 }
 
 /* ----------- CANVAS CONTAINER ----------- */
@@ -309,16 +333,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f7fa;
-  padding: 20px;
+  background: #f6fafb;
+  padding: 24px;
   min-width: 0;
   min-height: 0;
 }
 .canvas-container canvas {
-  border: 3px solid #bf4aa8;
-  border-radius: 12px;
+  border: 3px solid #7bd389;
+  border-radius: 16px;
   background: #fff;
-  box-shadow: 0 4px 16px rgba(81, 208, 222, 0.13);
+  box-shadow: 0 6px 20px rgba(30, 144, 168, 0.11);
   display: block;
   max-width: 100%;
   max-height: 100%;
@@ -328,7 +352,7 @@
 .modal {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(81, 208, 222, 0.18);
+  background: rgba(30, 144, 168, 0.11);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -336,112 +360,119 @@
 }
 .modal-content {
   background: #fff;
-  padding: 2rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 24px rgba(191, 74, 168, 0.13);
-  max-width: 500px;
-  width: 92%;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(30, 144, 168, 0.13);
+  max-width: 520px;
+  width: 90%;
   max-height: 80vh;
   overflow-y: auto;
   margin: 0 auto;
 }
 .modal-content h3 {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   text-align: center;
-  color: #bf4aa8;
+  color: #1e90a8;
+  font-weight: 800;
 }
 .modal-content input,
 .modal-content select {
   width: 100%;
-  padding: 8px;
-  margin: 8px 0;
-  border: 1.5px solid #51d0de;
-  border-radius: 5px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #7bd389;
+  border-radius: 12px;
   box-sizing: border-box;
-  background: #f5f7fa;
+  background: #e6f9f5;
 }
 .modal-content label {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 8px 0;
+  gap: 10px;
+  margin: 10px 0;
+  font-weight: 600;
+  color: #1e90a8;
 }
 .modal-actions {
   display: flex;
-  gap: 10px;
+  gap: 14px;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .modal-actions button {
-  padding: 8px 16px;
-  border: 1.5px solid #51d0de;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border: 2px solid #1e90a8;
+  border-radius: 14px;
   cursor: pointer;
-  background: #51d0de;
+  background: #1e90a8;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
+  transition: background 0.22s;
 }
 .modal-actions button[type="submit"] {
-  background: #bf4aa8;
-  border-color: #bf4aa8;
+  background: #7bd389;
+  border-color: #7bd389;
+  color: #1a5e63;
 }
 .modal-actions button:hover {
-  background: #fff;
-  color: #51d0de;
-  border-color: #51d0de;
+  background: #ffe066;
+  color: #1a5e63;
+  border-color: #ffe066;
 }
 
 /* ----------- EXPORT/SAVE DIALOG ----------- */
 .export-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e9ecef;
   text-align: center;
 }
 .export-section:last-of-type {
   border-bottom: none;
 }
 .export-section h4 {
-  margin: 0 0 0.5rem 0;
-  color: #51d0de;
-  font-size: 16px;
+  margin: 0 0 0.6rem 0;
+  color: #1e90a8;
+  font-size: 17px;
+  font-weight: 700;
 }
 .export-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   justify-content: center;
 }
 .export-btn {
-  padding: 10px 16px;
-  background: #51d0de;
+  padding: 12px 20px;
+  background: #1e90a8;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  transition: background 0.2s;
-  min-width: 120px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.22s;
+  min-width: 140px;
 }
 .export-btn:hover {
-  background: #bf4aa8;
+  background: #ffe066;
+  color: #1a5e63;
 }
 
 /* ----------- ROOM & USER LISTS ----------- */
 .rooms-list, .users-list {
-  max-height: 300px;
+  max-height: 320px;
   overflow-y: auto;
 }
 .room-item, .user-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border: 1.5px solid #51d0de;
-  border-radius: 7px;
-  margin-bottom: 8px;
+  padding: 12px;
+  border: 2px solid #7bd389;
+  border-radius: 14px;
+  margin-bottom: 10px;
   background: #fff;
 }
 .room-info {
@@ -453,21 +484,21 @@
 /* ----------- PERMISSION CONTROLS ----------- */
 .permission-controls {
   display: flex;
-  gap: 5px;
+  gap: 8px;
 }
 .permission-controls button {
-  padding: 4px 10px;
-  font-size: 12px;
-  border: 1.5px solid #bf4aa8;
-  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 13px;
+  border: 2px solid #1e90a8;
+  border-radius: 8px;
   cursor: pointer;
   background: #fff;
-  color: #bf4aa8;
-  font-weight: 600;
-  transition: background 0.15s;
+  color: #1e90a8;
+  font-weight: 700;
+  transition: background 0.2s;
 }
 .permission-controls button:hover {
-  background: #bf4aa8;
+  background: #1e90a8;
   color: #fff;
 }
 .permission-controls button:disabled {
@@ -477,14 +508,14 @@
 
 /* ----------- VIEW-ONLY PERMISSION INDICATOR ----------- */
 .view-only-notice {
-  background: linear-gradient(135deg, #51d0de 0%, #bf4aa8 100%);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 13px;
+  background: linear-gradient(135deg, #ffe066 0%, #1e90a8 100%);
+  color: #1a5e63;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-size: 14px;
   font-weight: 700;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(81, 208, 222, 0.13);
+  box-shadow: 0 3px 8px rgba(255, 224, 102, 0.15);
 }
 
 /* ----------- MOBILE RESPONSIVE ROOM INFO HEADER ----------- */
@@ -492,18 +523,18 @@
   .room-info {
     flex-direction: column;
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     min-height: unset;
   }
   .room-title {
     position: static;
     transform: none;
-    margin: 10px 0;
+    margin: 12px 0;
   }
   .room-details,
   .room-controls {
     position: static;
     justify-content: center;
-    margin: 5px 0;
+    margin: 6px 0;
   }
 }
