@@ -2,8 +2,8 @@
 
 A robust real-time collaborative whiteboard that empowers multiple users to draw, create shapes, and brainstorm together on a shared canvas. Built with **React**, **Socket.IO**, and **Fabric.js**, this app delivers a seamless multi-user drawing experience.
 
-- **[Video Demo](https://drive.google.com/file/d/13iBleH3I83pfNF9IT-3UXiHjxwbDF-vw/view?usp=sharing)**
-- **[Live App](https://collaborative-whiteboard-murex.vercel.app/)**
+- **[Video Demo](https://drive.google.com/file/d/1MYpivnUKpjG9yGNIIUdo7_Uy0qCWTSl1/view?usp=drive_link)**
+- **[Live App](https://collaborative-whiteboard-project.vercel.app/)**
 
 ---
 
