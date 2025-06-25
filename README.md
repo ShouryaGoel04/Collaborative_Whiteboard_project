@@ -35,3 +35,23 @@ Collaborative Whiteboard is a web platform for visual teamwork and creative coll
 **Prerequisites:** Node.js (v14+), npm/yarn, modern browser
 
 **Backend:**
+
+(Backend runs at http://localhost:10000)
+
+**Frontend:**
+
+*If needed, update the Socket.IO URL in `WhiteboardApp.jsx`:*
+
+
+**Running the App:**
+- **Terminal 1:** `cd whiteboard-backend && node index.js`
+- **Terminal 2:** `cd whiteboard-frontend && npm run dev`
+- Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## License
+
+Open-source for educational and non-commercial use.
+
+---
